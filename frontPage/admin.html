@@ -50,229 +50,261 @@
     <div class="row">
         <div class="col-xs-12 col-sm-4 col-md-3">
             <div class="page-sider navbar-collapse collapse">
-
-                <ul class="page-sider-menu" id="sider-menu">
+                <!--一级目录-->
+                <div class="page-sider-menu" id="sider-menu">
                     <div class="menu-header">显示面板</div>
-                    <li class="active">
-                        <a href="#articleR">
-                            <span class="title">文章管理</span>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#addArticle">
-                            <span class="title">增加文章</span>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#addAdmin">
-                            <span class="title">权限管理</span>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#addTeacher">
-                            <span class="title">老师信息</span>
-                        </a>
-                    </li>
-                    <div class="menu-footer"></div>
-                </ul>
+                    <!--二级目录-->
+                    <div class="sub-list">
+                        模块1
+                    </div>
+                    <ul class="doc-submenu" style="display: block;">
+                        <li class="active">
+                            <a href="javascript:">
+                                <span class="title" data-mod="1-1">栏目管理</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="javascript:">
+                                <span class="title" data-mod="1-2">文章管理</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="javascript:">
+                                <span class="title" data-mod="1-3">附件管理</span>
+                            </a>
+                        </li>
+                    </ul>
+                    <!--二级目录结束-->
+                    <div class="sub-list">
+                        模块2
+                    </div>
+                    <ul class="doc-submenu">
+                        <li class="active">
+                            <a href="javascript:">
+                                <span class="title" data-mod="2-1">栏目管理</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="javascript:">
+                                <span class="title" data-mod="2-2">文章管理</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="javascript:">
+                                <span class="title" data-mod="2-3">附件管理</span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                <!--一级目录结束-->
+                <!--data-mod属性对应底下的data-mod，用于呼出每一块管理模块
+                    要注意的是，data-mod='1-1'的项目一定会有style='display:block;'
+                    的属性，因为没做进入面板，所有至少要有一个东西呈现嘛，就是1-1了。
+                -->
             </div>
         </div>
 
         <div class="col-xs-12 col-sm-8 col-md-9" style="position: relative;">
-            <div id="articleR" class="table-c" style="display: block;">
+            <!--栏目管理-->
+            <div class="table-c"  data-mod="1-1" style="display: block;">
                 <div class="panel panel-primary">
-                    <div class="panel-heading">文章管理</div>
+                    <div class="panel-heading">栏目管理</div>
                     <div class="panel-body">
-                        <form action="php/demo1.php" method="post">
-                            <table class="table table-hover">
-                                <thead>
-                                    <tr>
-                                        <th>勾选</th>
-                                        <th>标题</th>
-                                        <th>时间</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <tr>
-                                        <td><input name="checkbox[]" type="checkbox" value="1" /></td>
-                                        <td>标题1 标题1 标题1 标题1 </td>
-                                        <td>[时间2001.2.2.2]</td>
-                                    </tr>
-                                    <tr>
-                                        <td><input name="checkbox[]" type="checkbox" value="2" /></td>
-                                        <td>标题1 标题1 标题1 标题1 标题1 标题1 标题1 标题1 标题1 标题1 标题1 标题1 标题1  </td>
-                                        <td>[时间2001.2.2.2]</td>
-                                    </tr>
-                                    <tr>
-                                        <td><input name="checkbox[]" type="checkbox" value="3" /></td>
-                                        <td>标题1 标题1 标题1 标题1 </td>
-                                        <td>[时间2001.2.2.2]</td>
-                                    </tr>
-                                    <tr>
-                                        <td><input name="checkbox[]" type="checkbox" value="4" /></td>
-                                        <td>标题1 标题1 标题1 标题1 </td>
-                                        <td>[时间2001.2.2.2]</td>
-                                    </tr>
-                                    <tr>
-                                        <td><input name="checkbox[]" type="checkbox" value="5" /></td>
-                                        <td>标题1 标题1 标题1 标题1 </td>
-                                        <td>[时间2001.2.2.2]</td>
-                                    </tr>
-                                </tbody>
-                            </table>
-                            <ul class="pagination">
-                                <li class="disabled"><a href="#">&laquo;</a></li>
-                                <li class="active"><a href="#">1 <span class="sr-only">(current)</span></a></li>
-                                <li><a href="#">2</a></li>
-                                <li><a href="#">3</a></li>
-                                <li><a href="#">4</a></li>
-                                <li><a href="#">5</a></li>
-                                <li><a href="#">&raquo;</a></li>
-                            </ul>
-
-                            <br/>
-                            <input type="submit" value="删除"/>
-                        </form>
-                    </div>
-                </div>
-            </div>
-
-
-            <div id="addArticle" class="table-c">
-                <div class="panel panel-primary">
-                    <div class="panel-heading">添加文章</div>
-                    <div class="panel-body">
-                        <form  method="post" action="php/demo.php">
-                            <select name="selectArea">
-                                <option value="xyxw">学院新闻</option>
-                                <option value="xxxw">学校新闻</option>
-                                <option value="sthd">社团活动</option>
-                                <option value="tzgg">通知公告</option>
-                            </select>
-                            <textarea name="content" style="width:100%;height:300px;visibility:hidden;">KindEditor</textarea>
-                            <p>
-                                <input type="button" name="getHtml" value="取得HTML" />
-                                <input type="button" name="isEmpty" value="判断是否为空" />
-                                <input type="button" name="getText" value="取得文本(包含img,embed)" />
-                                <input type="button" name="selectedHtml" value="取得选中HTML" />
-                                <br />
-                                <br />
-                                <input type="button" name="setHtml" value="设置HTML" />
-                                <input type="button" name="setText" value="设置文本" />
-                                <input type="button" name="insertHtml" value="插入HTML" />
-                                <input type="button" name="appendHtml" value="添加HTML" />
-                                <input type="button" name="clear" value="清空内容" />
-                                <input type="reset" name="reset" value="Reset" />
-                                <input type="submit" name="submitText" id="submitText" value="提交"/>
-                            </p>
-                        </form>
-                        <script>
-                            var editor;
-                            KindEditor.ready(function(K) {
-                                editor = K.create('textarea[name="content"]', {
-                                    allowFileManager : true
-                                });
-                                K('input[name=getHtml]').click(function(e) {
-                                    alert(editor.html());
-                                });
-                                K('input[name=isEmpty]').click(function(e) {
-                                    alert(editor.isEmpty());
-                                });
-                                K('input[name=getText]').click(function(e) {
-                                    alert(editor.text());
-                                });
-                                K('input[name=selectedHtml]').click(function(e) {
-                                    alert(editor.selectedHtml());
-                                });
-                                K('input[name=setHtml]').click(function(e) {
-                                    editor.html('<h3>Hello KindEditor</h3>');
-                                });
-                                K('input[name=setText]').click(function(e) {
-                                    editor.text('<h3>Hello KindEditor</h3>');
-                                });
-                                K('input[name=insertHtml]').click(function(e) {
-                                    editor.insertHtml('<strong>插入HTML</strong>');
-                                });
-                                K('input[name=appendHtml]').click(function(e) {
-                                    editor.appendHtml('<strong>添加HTML</strong>');
-                                });
-                                K('input[name=clear]').click(function(e) {
-                                    editor.html('');
-                                });
-                            });
-                        </script>
-                    </div>
-                </div>
-            </div>
-
-            <div id="addAdmin" class="table-c">
-                <div class="panel panel-primary">
-                    <div class="panel-heading">权限管理</div>
-                    <div class="panel-body">
-                        <ul id="myTab" class="nav nav-tabs">
+                        <ul class="nav nav-tabs doc-menu">
                             <li class="active">
-                                <a href="#add" data-toggle="tab">增加权限</a>
+                                <a href="javascript:" data-lid="1">增加栏目</a>
                             </li>
                             <li class>
-                                <a href="#removeAdmin" data-toggle="tab">管理权限</a>
+                                <a href="javascript:" data-lid="2">管理栏目</a>
                             </li>
                         </ul>
-                        <div id="myTabContent" class="tab-content">
-                            <div class="tab-pane fade active in " id="add">
+                        <div class="tab-content">
+                            <div class="tab-pane fade in doc-pane" data-lid="1" style="display: block;">
                                 <div class="form-box">
-                                    <form role="form" method="get" action="php/demo2.php">
+                                    <form role="form" method="get" action="">
+                                        <hr/>
+                                        <!--每个form内都会有一个像下面这样隐藏的输入框
+                                            它的值可以是模块的键值，也可以是处理模块的
+                                            对应值这样在后台就可以省略一部分判断了，
+                                            如果需要，请自行增加隐藏输入框,减少后台判
+                                            断。比如一个input框用来放模块值，一个input
+                                            用来放functionName.我脑补就到这个地步了
+                                        -->
+                                        <input type="hidden" name="modName" value="mod1"/>
                                         <div class="form-group">
-                                            <label for="newuser">新用户名</label>
-                                            <input type="text" class="form-control" id="newuser" name="newuser" placeholder="username">
+                                            <label>栏目名称</label>
+                                            <input type="text" class="form-control" name="supmenu" placeholder="supmenu"/>
                                         </div>
-                                        <div class="form-group">
-                                            <label for="newpsw">输入密码</label>
-                                            <input type="password" class="form-control" id="newpsw" name="newpsw" placeholder="Password">
+                                        <div class="form-group sub-group">
+                                            <label>子栏目名称</label>
+                                            <div class="input-group">
+                                                <input type="text" class="form-control" name="submenu[]" placeholder="submenu"/>
+                                                <span class="input-group-addon btn-danger r-input">-</span>
+                                            </div>
                                         </div>
-                                        <div class="form-group">
-                                            <p class="help-block">用户名已存在</p>
-                                        </div>
+                                        <a href="javascript:" class="add-control">增加子栏目</a>
                                         <hr/>
                                         <button type="submit" class="btn btn-default">提交</button>
                                     </form>
                                 </div>
                             </div>
-                            <div class="tab-pane fade" id="removeAdmin">
+                            <div class="tab-pane fade doc-pane" data-lid="2">
                                 <div class="form-box">
-                                    <form action="php/demo3.php" method="post" role="form">
+                                    <form action="" method="post" role="form">
+                                        <hr/>
+                                        <!--隐藏-->
+                                        <input type="hidden" name="modName" value="mod1"/>
+                                        <div class="doc-lmgl">
+                                            <div class="doc-menu-list">
+                                                <div class="doc-list-sup">
+                                                    <input class="removeMenu"  type="checkbox" name="removeMenu[]" value="1" />
+                                                    <span>模块1</span>
+                                                </div>
+                                                <div class="doc-list-sub">
+                                                    <input type="checkbox" name="removeSupMenu[]" value="1.1" />
+                                                    <span>子栏目1</span>
+                                                    <input type="checkbox" name="removeSupMenu[]" value="1.2" />
+                                                    <span>子栏目2</span>
+                                                    <input type="checkbox" name="removeSupMenu[]" value="1.3" />
+                                                    <span>子栏目3</span>
+                                                </div>
+                                            </div>
+
+                                            <div class="doc-menu-list">
+                                                <div class="doc-list-sup">
+                                                    <input class="removeMenu"  type="checkbox" name="removeMenu[]" value="2" />
+                                                    <span>模块2</span>
+                                                </div>
+                                                <div class="doc-list-sub">
+                                                    <input type="checkbox" name="removeSupMenu[]" value="2.1" />
+                                                    <span>子栏目1</span>
+                                                    <input type="checkbox" name="removeSupMenu[]" value="2.2" />
+                                                    <span>子栏目2</span>
+                                                    <input type="checkbox" name="removeSupMenu[]" value="2.3" />
+                                                    <span>子栏目3</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <hr/>
+                                        <input type="submit" value="删除"/>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!--栏目管理结束-->
+            <!--文章管理-->
+            <div class="table-c" data-mod="1-2">
+                <div class="panel panel-primary">
+                    <div class="panel-heading">文章管理</div>
+                    <div class="panel-body">
+                        <ul class="nav nav-tabs doc-menu">
+                            <li class="active">
+                                <a href="javascript:" data-lid="1">增加文章</a>
+                            </li>
+                            <li class>
+                                <a href="javascript:" data-lid="2">管理文章</a>
+                            </li>
+                        </ul>
+                        <div class="tab-content">
+                            <div class="tab-pane fade in doc-pane" data-lid="1" style="display: block;">
+                                <form  method="post" action="">
+                                    <input type="hidden" name="modName" value="mod1"/>
+                                    <textarea name="content" style="width:100%;height:300px;visibility:hidden;">KindEditor</textarea>
+                                    <p>
+                                        <input type="button" name="getHtml" value="取得HTML" />
+                                        <input type="button" name="isEmpty" value="判断是否为空" />
+                                        <input type="button" name="getText" value="取得文本(包含img,embed)" />
+                                        <input type="button" name="selectedHtml" value="取得选中HTML" />
+                                        <br />
+                                        <br />
+                                        <input type="button" name="setHtml" value="设置HTML" />
+                                        <input type="button" name="setText" value="设置文本" />
+                                        <input type="button" name="insertHtml" value="插入HTML" />
+                                        <input type="button" name="appendHtml" value="添加HTML" />
+                                        <input type="button" name="clear" value="清空内容" />
+                                        <input type="reset" name="reset" value="Reset" />
+                                        <input type="submit" name="submitText" value="提交"/>
+                                    </p>
+                                </form>
+                                <script>
+                                    var editor;
+                                    KindEditor.ready(function(K) {
+                                        editor = K.create('textarea[name="content"]', {
+                                            allowFileManager : true
+                                        });
+                                        K('input[name=getHtml]').click(function(e) {
+                                            alert(editor.html());
+                                        });
+                                        K('input[name=isEmpty]').click(function(e) {
+                                            alert(editor.isEmpty());
+                                        });
+                                        K('input[name=getText]').click(function(e) {
+                                            alert(editor.text());
+                                        });
+                                        K('input[name=selectedHtml]').click(function(e) {
+                                            alert(editor.selectedHtml());
+                                        });
+                                        K('input[name=setHtml]').click(function(e) {
+                                            editor.html('<h3>Hello KindEditor</h3>');
+                                        });
+                                        K('input[name=setText]').click(function(e) {
+                                            editor.text('<h3>Hello KindEditor</h3>');
+                                        });
+                                        K('input[name=insertHtml]').click(function(e) {
+                                            editor.insertHtml('<strong>插入HTML</strong>');
+                                        });
+                                        K('input[name=appendHtml]').click(function(e) {
+                                            editor.appendHtml('<strong>添加HTML</strong>');
+                                        });
+                                        K('input[name=clear]').click(function(e) {
+                                            editor.html('');
+                                        });
+                                        K('input[name=submit]').click(function(e) {
+                                            editor.submit();
+                                        });
+                                    });
+                                </script>
+                            </div>
+                            <div class="tab-pane fade doc-pane" data-lid="2">
+                                <div class="form-box">
+                                    <form action="" method="post">
+                                        <input type="hidden" name="modName" value="mod1"/>
                                         <table class="table table-hover">
                                             <thead>
                                             <tr>
                                                 <th>勾选</th>
-                                                <th>用户名</th>
-                                                <th>添加者</th>
+                                                <th>标题</th>
+                                                <th>时间</th>
                                             </tr>
                                             </thead>
                                             <tbody>
                                             <tr>
-                                                <td><input name="chk[]" type="checkbox" value="1" /></td>
-                                                <td>李鹏辉</td>
-                                                <td>雒林</td>
+                                                <td><input name="checkArticle[]" type="checkbox" value="1" /></td>
+                                                <td>标题1 标题1 标题1 标题1 </td>
+                                                <td>[时间2001.2.2.2]</td>
                                             </tr>
                                             <tr>
-                                                <td><input name="chk[]" type="checkbox" value="2" /></td>
-                                                <td>陈思雨</td>
-                                                <td>雒林</td>
+                                                <td><input name="checkArticle[]" type="checkbox" value="2" /></td>
+                                                <td>标题1 标题1 标题1 标题1 标题1 标题1 标题1 标题1 标题1 标题1 标题1 标题1 标题1  </td>
+                                                <td>[时间2001.2.2.2]</td>
                                             </tr>
                                             <tr>
-                                                <td><input name="chk[]" type="checkbox" value="3" /></td>
-                                                <td>哈哈</td>
-                                                <td>周碧涵</td>
+                                                <td><input name="checkArticle[]" type="checkbox" value="3" /></td>
+                                                <td>标题1 标题1 标题1 标题1 </td>
+                                                <td>[时间2001.2.2.2]</td>
                                             </tr>
                                             <tr>
-                                                <td><input name="chk[]" type="checkbox" value="4" /></td>
-                                                <td>脑袋不好使</td>
-                                                <td>李鹏辉</td>
+                                                <td><input name="checkArticle[]" type="checkbox" value="4" /></td>
+                                                <td>标题1 标题1 标题1 标题1 </td>
+                                                <td>[时间2001.2.2.2]</td>
                                             </tr>
                                             <tr>
-                                                <td><input name="chk[]" type="checkbox" value="5" /></td>
-                                                <td>要挂了</td>
-                                                <td>卧槽</td>
+                                                <td><input name="checkArticle[]" type="checkbox" value="5" /></td>
+                                                <td>标题1 标题1 标题1 标题1 </td>
+                                                <td>[时间2001.2.2.2]</td>
                                             </tr>
                                             </tbody>
                                         </table>
@@ -295,60 +327,53 @@
                     </div>
                 </div>
             </div>
-
-            <div id="addTeacher" class="table-c">
+            <!--文章管理结束-->
+            <!--附件管理-->
+            <div class="table-c" data-mod="1-3">
                 <div class="panel panel-primary">
-                    <div class="panel-heading">教师信息管理</div>
+                    <div class="panel-heading">附件管理</div>
                     <div class="panel-body">
-                        <ul id="teacherTab" class="nav nav-tabs">
+                        <ul class="nav nav-tabs doc-menu">
                             <li class="active">
-                                <a href="#addT" data-toggle="tab">增加教师信息</a>
+                                <a href="javascript:" data-lid="1">增加附件</a>
                             </li>
                             <li class>
-                                <a href="#removeT" data-toggle="tab">管理教师信息</a>
+                                <a href="javascript:" data-lid="2">管理附件</a>
                             </li>
                         </ul>
-                        <div id="teacherContent" class="tab-content">
-                            <div class="tab-pane fade active in " id="addT">
+                        <div class="tab-content">
+                            <div class="tab-pane fade in doc-pane" data-lid="1" style="display: block;">
                                 <div class="form-box">
-                                    <form role="form" method="post" action="php/demo4.php" enctype="multipart/form-data">
+                                    <form role="form" method="post" action="" enctype="multipart/form-data">
+                                        <input type="hidden" name="modName" value="mod1"/>
                                         <div class="form-group">
-                                            <label for="uploadImg">上传图片</label>
-                                            <input type="file" id="uploadImg" name="">
-                                            <p class="help-block">图片上传成功</p>
+                                            <label>上传文件</label>
+                                            <input type="file" name="uploadImg">
+                                            <p class="help-block">文件上传成功</p>
                                         </div>
                                         <div class="form-group">
-                                            <label for="teacherName">教师姓名</label>
-                                            <input type="text" id="teacherName" name="teacherName"/>
+                                            <label>文件名字</label>
+                                            <input type="text" name="fileName"/>
                                         </div>
                                         <div class="form-group">
-                                            <label for="teacherInfo">教师介绍</label>
-                                            <input type="hidden" id="teacherInfo" name="teacherInfo" value=""/>
-                                            <textarea id="infoBox" style="width: 100%;height:130px;"></textarea>
+                                            <label>文件描述</label>
+                                            <input type="hidden" name="fileInfo" value=""/>
+                                            <textarea name="infoBox" style="width: 100%;height:130px;"></textarea>
                                         </div>
+                                        <button type="submit" name="file-submit" class="btn btn-default">提交</button>
                                         <hr/>
-                                        <button type="submit" id="t-submit" class="btn btn-default">提交</button>
-                                        <script>
-                                            $("#t-submit").click(
-                                                    function(){
-                                                        $("#teacherInfo").val(function(){
-                                                            return $("#infoBox").val();
-                                                        });
-                                                        $("#t-submit").submit();
-                                                    }
-                                            );
-                                        </script>
                                     </form>
                                 </div>
                             </div>
-                            <div class="tab-pane fade" id="removeT">
+                            <div class="tab-pane fade doc-pane" data-lid="2">
                                 <div class="form-box">
-                                    <form action="php/demo5.php" method="post" role="form">
+                                    <form action="" method="post" role="form">
+                                        <input type="hidden" name="modName" value="mod1"/>
                                         <table class="table table-hover">
                                             <thead>
                                             <tr>
                                                 <th>勾选</th>
-                                                <th>老师姓名</th>
+                                                <th>文件名</th>
                                                 <th>添加者</th>
                                             </tr>
                                             </thead>
@@ -399,14 +424,366 @@
                     </div>
                 </div>
             </div>
+            <!--附件管理结束-->
+
+            <!--栏目管理-->
+            <div class="table-c"  data-mod="2-1">
+                <div class="panel panel-primary">
+                    <div class="panel-heading">栏目管理</div>
+                    <div class="panel-body">
+                        <ul class="nav nav-tabs doc-menu">
+                            <li class="active">
+                                <a href="javascript:" data-lid="1">增加栏目</a>
+                            </li>
+                            <li class>
+                                <a href="javascript:" data-lid="2">管理栏目</a>
+                            </li>
+                        </ul>
+                        <div class="tab-content">
+                            <div class="tab-pane fade in doc-pane" data-lid="1" style="display: block;">
+                                <div class="form-box">
+                                    <form role="form" method="get" action="">
+                                        <hr/>
+                                        <!--每个form内都会有一个像下面这样隐藏的输入框
+                                            它的值可以是模块的键值，也可以是处理模块的
+                                            对应值这样在后台就可以省略一部分判断了，
+                                            如果需要，请自行增加隐藏输入框,减少后台判
+                                            断。比如一个input框用来放模块值，一个input
+                                            用来放functionName.我脑补就到这个地步了
+                                        -->
+                                        <input type="hidden" name="modName" value="mod2"/>
+                                        <div class="form-group">
+                                            <label>栏目名称</label>
+                                            <input type="text" class="form-control" name="supmenu" placeholder="supmenu"/>
+                                        </div>
+                                        <div class="form-group sub-group">
+                                            <label>子栏目名称</label>
+                                            <div class="input-group">
+                                                <input type="text" class="form-control" name="submenu[]" placeholder="submenu"/>
+                                                <span class="input-group-addon btn-danger r-input">-</span>
+                                            </div>
+                                        </div>
+                                        <a href="javascript:" class="add-control">增加子栏目</a>
+                                        <hr/>
+                                        <button type="submit" class="btn btn-default">提交</button>
+                                    </form>
+                                </div>
+                            </div>
+                            <div class="tab-pane fade doc-pane" data-lid="2">
+                                <div class="form-box">
+                                    <form action="" method="post" role="form">
+                                        <hr/>
+                                        <!--隐藏-->
+                                        <input type="hidden" name="modName" value="mod2"/>
+                                        <div class="doc-lmgl">
+                                            <div class="doc-menu-list">
+                                                <div class="doc-list-sup">
+                                                    <input class="removeMenu"  type="checkbox" name="removeMenu[]" value="1" />
+                                                    <span>模块1</span>
+                                                </div>
+                                                <div class="doc-list-sub">
+                                                    <input type="checkbox" name="removeSupMenu[]" value="1.1" />
+                                                    <span>子栏目1</span>
+                                                    <input type="checkbox" name="removeSupMenu[]" value="1.2" />
+                                                    <span>子栏目2</span>
+                                                    <input type="checkbox" name="removeSupMenu[]" value="1.3" />
+                                                    <span>子栏目3</span>
+                                                </div>
+                                            </div>
+
+                                            <div class="doc-menu-list">
+                                                <div class="doc-list-sup">
+                                                    <input class="removeMenu"  type="checkbox" name="removeMenu[]" value="2" />
+                                                    <span>模块2</span>
+                                                </div>
+                                                <div class="doc-list-sub">
+                                                    <input type="checkbox" name="removeSupMenu[]" value="2.1" />
+                                                    <span>子栏目1</span>
+                                                    <input type="checkbox" name="removeSupMenu[]" value="2.2" />
+                                                    <span>子栏目2</span>
+                                                    <input type="checkbox" name="removeSupMenu[]" value="2.3" />
+                                                    <span>子栏目3</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <hr/>
+                                        <input type="submit" value="删除"/>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!--栏目管理结束-->
+            <!--文章管理-->
+            <div class="table-c" data-mod="2-2">
+                <div class="panel panel-primary">
+                    <div class="panel-heading">文章管理</div>
+                    <div class="panel-body">
+                        <ul class="nav nav-tabs doc-menu">
+                            <li class="active">
+                                <a href="javascript:" data-lid="1">增加文章</a>
+                            </li>
+                            <li class>
+                                <a href="javascript:" data-lid="2">管理文章</a>
+                            </li>
+                        </ul>
+                        <div class="tab-content">
+                            <div class="tab-pane fade in doc-pane" data-lid="1" style="display: block;">
+                                <form  method="post" action="">
+                                    <input type="hidden" name="modName" value="mod2"/>
+                                    <textarea name="content" style="width:100%;height:300px;visibility:hidden;">KindEditor</textarea>
+                                    <p>
+                                        <input type="button" name="getHtml" value="取得HTML" />
+                                        <input type="button" name="isEmpty" value="判断是否为空" />
+                                        <input type="button" name="getText" value="取得文本(包含img,embed)" />
+                                        <input type="button" name="selectedHtml" value="取得选中HTML" />
+                                        <br />
+                                        <br />
+                                        <input type="button" name="setHtml" value="设置HTML" />
+                                        <input type="button" name="setText" value="设置文本" />
+                                        <input type="button" name="insertHtml" value="插入HTML" />
+                                        <input type="button" name="appendHtml" value="添加HTML" />
+                                        <input type="button" name="clear" value="清空内容" />
+                                        <input type="reset" name="reset" value="Reset" />
+                                        <input type="submit" name="submitText" value="提交"/>
+                                    </p>
+                                </form>
+                                <script>
+                                    var editor;
+                                    KindEditor.ready(function(K) {
+                                        editor = K.create('textarea[name="content"]', {
+                                            allowFileManager : true
+                                        });
+                                        K('input[name=getHtml]').click(function(e) {
+                                            alert(editor.html());
+                                        });
+                                        K('input[name=isEmpty]').click(function(e) {
+                                            alert(editor.isEmpty());
+                                        });
+                                        K('input[name=getText]').click(function(e) {
+                                            alert(editor.text());
+                                        });
+                                        K('input[name=selectedHtml]').click(function(e) {
+                                            alert(editor.selectedHtml());
+                                        });
+                                        K('input[name=setHtml]').click(function(e) {
+                                            editor.html('<h3>Hello KindEditor</h3>');
+                                        });
+                                        K('input[name=setText]').click(function(e) {
+                                            editor.text('<h3>Hello KindEditor</h3>');
+                                        });
+                                        K('input[name=insertHtml]').click(function(e) {
+                                            editor.insertHtml('<strong>插入HTML</strong>');
+                                        });
+                                        K('input[name=appendHtml]').click(function(e) {
+                                            editor.appendHtml('<strong>添加HTML</strong>');
+                                        });
+                                        K('input[name=clear]').click(function(e) {
+                                            editor.html('');
+                                        });
+                                        K('input[name=submit]').click(function(e) {
+                                            editor.submit();
+                                        });
+                                    });
+                                </script>
+                            </div>
+                            <div class="tab-pane fade doc-pane" data-lid="2">
+                                <div class="form-box">
+                                    <form action="" method="post">
+                                        <input type="hidden" name="modName" value="mod2"/>
+                                        <table class="table table-hover">
+                                            <thead>
+                                            <tr>
+                                                <th>勾选</th>
+                                                <th>标题</th>
+                                                <th>时间</th>
+                                            </tr>
+                                            </thead>
+                                            <tbody>
+                                            <tr>
+                                                <td><input name="checkArticle[]" type="checkbox" value="1" /></td>
+                                                <td>标题1 标题1 标题1 标题1 </td>
+                                                <td>[时间2001.2.2.2]</td>
+                                            </tr>
+                                            <tr>
+                                                <td><input name="checkArticle[]" type="checkbox" value="2" /></td>
+                                                <td>标题1 标题1 标题1 标题1 标题1 标题1 标题1 标题1 标题1 标题1 标题1 标题1 标题1  </td>
+                                                <td>[时间2001.2.2.2]</td>
+                                            </tr>
+                                            <tr>
+                                                <td><input name="checkArticle[]" type="checkbox" value="3" /></td>
+                                                <td>标题1 标题1 标题1 标题1 </td>
+                                                <td>[时间2001.2.2.2]</td>
+                                            </tr>
+                                            <tr>
+                                                <td><input name="checkArticle[]" type="checkbox" value="4" /></td>
+                                                <td>标题1 标题1 标题1 标题1 </td>
+                                                <td>[时间2001.2.2.2]</td>
+                                            </tr>
+                                            <tr>
+                                                <td><input name="checkArticle[]" type="checkbox" value="5" /></td>
+                                                <td>标题1 标题1 标题1 标题1 </td>
+                                                <td>[时间2001.2.2.2]</td>
+                                            </tr>
+                                            </tbody>
+                                        </table>
+                                        <ul class="pagination">
+                                            <li class="disabled"><a href="#">&laquo;</a></li>
+                                            <li class="active"><a href="#">1 <span class="sr-only">(current)</span></a></li>
+                                            <li><a href="#">2</a></li>
+                                            <li><a href="#">3</a></li>
+                                            <li><a href="#">4</a></li>
+                                            <li><a href="#">5</a></li>
+                                            <li><a href="#">&raquo;</a></li>
+                                        </ul>
+
+                                        <br/>
+                                        <input type="submit" value="删除"/>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!--文章管理结束-->
+            <!--附件管理-->
+            <div class="table-c" data-mod="2-3">
+                <div class="panel panel-primary">
+                    <div class="panel-heading">附件管理</div>
+                    <div class="panel-body">
+                        <ul class="nav nav-tabs doc-menu">
+                            <li class="active">
+                                <a href="javascript:" data-lid="1">增加附件</a>
+                            </li>
+                            <li class>
+                                <a href="javascript:" data-lid="2">管理附件</a>
+                            </li>
+                        </ul>
+                        <div class="tab-content">
+                            <div class="tab-pane fade in doc-pane" data-lid="1" style="display: block;">
+                                <div class="form-box">
+                                    <form role="form" method="post" action="" enctype="multipart/form-data">
+                                        <input type="hidden" name="modName" value="mod2"/>
+                                        <div class="form-group">
+                                            <label>上传文件</label>
+                                            <input type="file" name="uploadImg">
+                                            <p class="help-block">文件上传成功</p>
+                                        </div>
+                                        <div class="form-group">
+                                            <label>文件名字</label>
+                                            <input type="text" name="fileName"/>
+                                        </div>
+                                        <div class="form-group">
+                                            <label>文件描述</label>
+                                            <input type="hidden" name="fileInfo" value=""/>
+                                            <textarea name="infoBox" style="width: 100%;height:130px;"></textarea>
+                                        </div>
+                                        <button type="submit" name="file-submit" class="btn btn-default">提交</button>
+                                        <hr/>
+                                    </form>
+                                </div>
+                            </div>
+                            <div class="tab-pane fade doc-pane" data-lid="2">
+                                <div class="form-box">
+                                    <form action="" method="post" role="form">
+                                        <input type="hidden" name="modName" value="mod2"/>
+                                        <table class="table table-hover">
+                                            <thead>
+                                            <tr>
+                                                <th>勾选</th>
+                                                <th>文件名</th>
+                                                <th>添加者</th>
+                                            </tr>
+                                            </thead>
+                                            <tbody>
+                                            <tr>
+                                                <td><input name="teacherKeys[]" type="checkbox" value="1" /></td>
+                                                <td>李鹏辉</td>
+                                                <td>雒林</td>
+                                            </tr>
+                                            <tr>
+                                                <td><input name="teacherKeys[]" type="checkbox" value="2" /></td>
+                                                <td>陈思雨</td>
+                                                <td>雒林</td>
+                                            </tr>
+                                            <tr>
+                                                <td><input name="teacherKeys[]" type="checkbox" value="3" /></td>
+                                                <td>熊耀</td>
+                                                <td>雒林</td>
+                                            </tr>
+                                            <tr>
+                                                <td><input name="teacherKeys[]" type="checkbox" value="4" /></td>
+                                                <td>张晓龙</td>
+                                                <td>雒林</td>
+                                            </tr>
+                                            <tr>
+                                                <td><input name="teacherKeys[]" type="checkbox" value="5" /></td>
+                                                <td>又有</td>
+                                                <td>雒林</td>
+                                            </tr>
+                                            </tbody>
+                                        </table>
+                                        <ul class="pagination">
+                                            <li class="disabled"><a href="#">&laquo;</a></li>
+                                            <li class="active"><a href="#">1 <span class="sr-only">(current)</span></a></li>
+                                            <li><a href="#">2</a></li>
+                                            <li><a href="#">3</a></li>
+                                            <li><a href="#">4</a></li>
+                                            <li><a href="#">5</a></li>
+                                            <li><a href="#">&raquo;</a></li>
+                                        </ul>
+
+                                        <br/>
+                                        <input type="submit" value="删除"/>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!--附件管理结束-->
         </div>
+
+
+
     </div>
 </div>
 <script>
-$('#sider-menu a').click(function (e) {
-    e.preventDefault();
-    $($(this).attr("href")).fadeIn().siblings("div").hide();
-})
+$('.sub-list').click(function(){
+    $(this).next().slideToggle();
+});
+$('.doc-menu li a').click(function(){
+    $(this).parent()
+            .addClass("active")
+            .siblings().removeClass("active")
+            .parent().next()
+            .children('[data-lid='+'"'+$(this).attr("data-lid")+'"'+']')
+            .show().addClass("fade in")
+            .siblings().removeClass("fade in").hide();
+});
+$('.doc-submenu li a').click(function(){
+    $('div[data-mod='+'"'+$(this).children("span").attr("data-mod")+'"'+']').show().siblings().hide();
+});
+$("button[name='file-submit']").click(function(){
+    $(this).prev().children('input').val(function(){
+        return $(this).next().val();
+    });
+    $(this).submit();
+});
+$(".add-control").click(function(){
+    $(this).prev().append(
+            "<div class='input-group'>" +
+                    "<input type='text' class='form-control' name='submenu[]' placeholder='submenu'/>" +
+                    "<span class='input-group-addon btn-danger r-input' onclick='removeNode(this)'>-</span>" +
+            "</div>");
+});
+function removeNode(obj){
+    $(obj).parent().remove();
+}
 </script>
 </body>
 </html>
